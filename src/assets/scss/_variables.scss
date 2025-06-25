@@ -1,0 +1,35 @@
+:root {
+  --primary-color: #6200ea;
+  --secondary-color: #03dac6;
+  --background-color: #ffffff;
+  --text-color: #000000;
+
+  /* Glass backgrounds: use alpha for transparency */
+  --default-bg: rgba(255,255,255,0.18);      // frosted white
+  --primary-bg: rgba(98,0,234,0.18);         // frosted purple
+  --success-bg: rgba(58,231,153,0.18);       // frosted green
+  --warning-bg: rgba(245,213,84,0.18);       // frosted yellow
+  --danger-bg:  rgba(236,86,86,0.18);        // frosted red
+  --info-bg:    rgba(23,162,184,0.18);       // frosted blue
+  --light-bg:   rgba(255,255,255,0.38);      // more opaque white
+  --dark-bg:    rgba(52,58,64,0.38);         // frosted dark
+
+  --font-family: 'Roboto', sans-serif;
+  --border-radius: 12px;
+}
+
+[data-theme='dark'] {
+  --primary-color: #bb86fc;
+  --background-color: #121212;
+  --text-color: #ffffff;
+
+  --default-bg: rgba(30,30,30,0.38);
+  --primary-bg: rgba(187,134,252,0.18);
+  --success-bg: rgba(58,231,153,0.18);
+  --warning-bg: rgba(245,213,84,0.18);
+  --danger-bg:  rgba(236,86,86,0.18);
+  --info-bg:    rgba(23,162,184,0.18);
+  --light-bg:   rgba(255,255,255,0.10);
+  --dark-bg:    rgba(52,58,64,0.60);
+}
+$sizes: ('xxs':'8px', 'xs': '10px', 'sm': '12px', 'md': '16px', 'lg': '20px', 'xl': '24px', '2x': '32px', '3x': '48px', '4x': '64px');

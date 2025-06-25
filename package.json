@@ -1,0 +1,40 @@
+{
+  "name": "glass-ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/glass-ui.umd.js",
+  "module": "dist/glass-ui.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/glass-ui.es.js",
+      "require": "./dist/glass-ui.umd.js"
+    },
+    "./styles": "./dist/glass-ui.css"
+  },
+  "files": [
+    "dist",
+    "src/assets/scss"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^4.0.1",
+    "@storybook/addon-onboarding": "^9.0.13",
+    "@storybook/vue3-vite": "^9.0.13",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "sass": "^1.83.0",
+    "storybook": "^9.0.13",
+    "vite": "^6.0.5",
+    "@storybook/addon-docs": "^9.0.13"
+  }
+}
