@@ -41,21 +41,32 @@ const Template = (args) => ({
   setup() {
     return { args };
   },
-  template: `<Panel v-bind="args">{{ args.default }}</Panel>`,
+  template: `<Panel v-bind="args"><span v-html="args.default" /></Panel>`,
 });
 
 export const Default = Template.bind({});
 Default.args = {
   variant: 'default',
-  padding: 'md',
+  padding: '4x',
   disabled: false,
-  default: 'Panel Content',
+  default: `
+    <h3>Welcome to GlassUI Panel</h3>
+    <p>
+      This panel demonstrates the glassmorphism effect.<br>
+      You can use it to group content, highlight information, or create beautiful layouts.
+    </p>
+    <ul>
+      <li>Customizable background variants</li>
+      <li>Adjustable padding</li>
+      <li>Accessible and responsive</li>
+    </ul>
+  `,
 };
 
 export const Success = Template.bind({});
 Success.args = {
   variant: 'success',
-  padding: 'lg',
+  padding: '4x',
   disabled: false,
   default: 'Success Panel',
 };
@@ -63,7 +74,7 @@ Success.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   variant: 'danger',
-  padding: 'md',
+  padding: '4x',
   disabled: true,
   default: 'Disabled Panel',
 };

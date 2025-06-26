@@ -26,7 +26,7 @@ const props = defineProps({
   variant: {
     type: String,
     default: 'info',
-    validator: v => ['info', 'success', 'warning', 'danger', 'light', 'dark'].includes(v),
+    validator: v => ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'].includes(v),
   },
   dismissible: {
     type: Boolean,
@@ -69,28 +69,35 @@ onBeforeUnmount(() => {
 .glass-alert {
   position: relative;
   padding: 1em 1.5em;
-  border-radius: 0.5em;
+  border-radius: var(--border-radius);
   margin: 1em 0;
   font-family: var(--font-family);
   font-size: 1em;
   color: var(--text-color);
   background: var(--default-bg);
-  box-shadow: 0 2px 8px #0001;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(var(--glass-blur));
+  border: var(--glass-border);
+  transition: opacity var(--transition);
 }
+
 .glass-alert--dismissible {
   padding-right: 3em; // Add space for the close button
 }
-.glass-alert--success { background: var(--success-bg); color: #222; }
-.glass-alert--warning { background: var(--warning-bg); color: #222; }
-.glass-alert--danger  { background: var(--danger-bg); color: #fff; }
-.glass-alert--info    { background: var(--info-bg); color: #fff; }
-.glass-alert--light   { background: var(--light-bg); color: #222; }
-.glass-alert--dark    { background: var(--dark-bg); color: #fff; }
+
+.glass-alert--primary    { background: var(--primary-bg);   color: var(--primary-text);   }
+.glass-alert--secondary  { background: var(--secondary-bg); color: var(--secondary-text); }
+.glass-alert--success    { background: var(--success-bg);   color: var(--success-text);   }
+.glass-alert--danger     { background: var(--danger-bg);    color: var(--danger-text);    }
+.glass-alert--warning    { background: var(--warning-bg);   color: var(--warning-text);   }
+.glass-alert--info       { background: var(--info-bg);      color: var(--info-text);      }
+.glass-alert--light      { background: var(--light-bg);     color: var(--light-text);     }
+.glass-alert--dark       { background: var(--dark-bg);      color: var(--dark-text);      }
 
 .glass-alert__close {
   position: absolute;
-  top: 0.5em;
-  right: 1em;
+  top: var(--space-sm, 0.5em);
+  right: var(--space-md, 1em);
   background: none;
   border: none;
   color: inherit;
@@ -99,9 +106,11 @@ onBeforeUnmount(() => {
   line-height: 1;
   padding: 0;
   opacity: 0.7;
-  transition: opacity 0.2s;
+  transition: opacity var(--transition);
+  border-radius: var(--border-radius);
 }
 .glass-alert__close:hover {
   opacity: 1;
+  background: var(--light-bg, rgba(255,255,255,0.38));
 }
 </style>

@@ -16,23 +16,28 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 @use '../../assets/scss/_variables.scss' as *;
+
 .glass-badge {
   display: inline-block;
   padding: 0.25em 0.75em;
   border-radius: 1em;
   font-size: 0.9em;
   font-weight: 500;
-  background: rgba(255,255,255,0.15);
+  background: var(--default-bg);
   color: var(--text-color);
   font-family: var(--font-family);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(var(--glass-blur));
+  box-shadow: var(--glass-shadow);
+  border: var(--glass-border);
+  transition: background var(--transition), color var(--transition);
 }
-.glass-badge--primary   { background: var(--primary-color); color: #fff; }
-.glass-badge--secondary { background: var(--secondary-color); color: #222; }
-.glass-badge--success   { background: var(--success-bg); color: #222; }
-.glass-badge--danger    { background: var(--danger-bg); color: #fff; }
-.glass-badge--warning   { background: var(--warning-bg); color: #222; }
-.glass-badge--info      { background: #17a2b8; color: #fff; }
-.glass-badge--light     { background: #f8f9fa; color: #222; }
-.glass-badge--dark      { background: #343a40; color: #fff; }
+
+.glass-badge--primary    { background: var(--primary-bg);   color: var(--primary-text);   }
+.glass-badge--secondary  { background: var(--secondary-bg); color: var(--secondary-text); }
+.glass-badge--success    { background: var(--success-bg);   color: var(--success-text);   }
+.glass-badge--danger     { background: var(--danger-bg);    color: var(--danger-text);    }
+.glass-badge--warning    { background: var(--warning-bg);   color: var(--warning-text);   }
+.glass-badge--info       { background: var(--info-bg);      color: var(--info-text);      }
+.glass-badge--light      { background: var(--light-bg);     color: var(--light-text);     }
+.glass-badge--dark       { background: var(--dark-bg);      color: var(--dark-text);      }
 </style>

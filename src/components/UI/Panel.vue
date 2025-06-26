@@ -16,7 +16,7 @@ const props = defineProps({
   variant: {
     type: String,
     default: 'default',
-    validator: v => ['default', 'success', 'primary', 'danger', 'warning'].includes(v)
+    validator: v => ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'].includes(v)
   },
   padding: {
     type: String,
@@ -43,18 +43,24 @@ const paddingClass = computed(() => props.padding ? `p--${props.padding}` : '');
 }
 
 .panel {
-  box-shadow: 1px 1px 1px #aaa;
-  transition: opacity 0.2s;
+  box-shadow: var(--glass-shadow);
+  transition: opacity var(--transition);
   color: var(--text-color);
   font-family: var(--font-family);
   border-radius: var(--border-radius);
+  background: var(--default-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border: var(--glass-border);
 }
 
-.bg--default   { background: var(--default-bg); }
-.bg--success   { background: var(--success-bg); }
-.bg--primary   { background: var(--primary-bg); }
-.bg--danger    { background: var(--danger-bg); }
-.bg--warning   { background: var(--warning-bg); }
+.bg--primary    { background: var(--primary-bg);   color: var(--primary-text);   }
+.bg--secondary  { background: var(--secondary-bg); color: var(--secondary-text); }
+.bg--success    { background: var(--success-bg);   color: var(--success-text);   }
+.bg--danger     { background: var(--danger-bg);    color: var(--danger-text);    }
+.bg--warning    { background: var(--warning-bg);   color: var(--warning-text);   }
+.bg--info       { background: var(--info-bg);      color: var(--info-text);      }
+.bg--light      { background: var(--light-bg);     color: var(--light-text);     }
+.bg--dark       { background: var(--dark-bg);      color: var(--dark-text);      }
 
 .is-disabled {
   opacity: 0.6;

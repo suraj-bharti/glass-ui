@@ -3,6 +3,7 @@
     :class="['glass-btn', `glass-btn--${variant}`, { 'is-disabled': disabled }]"
     :disabled="disabled"
     :type="type"
+    :aria-disabled="disabled ? 'true' : undefined"
     @click="onClick"
   >
     <slot />
@@ -10,8 +11,6 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue';
-
 const props = defineProps({
   variant: {
     type: String,
@@ -42,26 +41,35 @@ function onClick(event) {
 .glass-btn {
   padding: 0.5em 1.5em;
   border: none;
-  border-radius: 0.5em;
+  border-radius: var(--border-radius);
   font-size: 1em;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  background: rgba(255,255,255,0.15);
+  transition: background var(--transition), color var(--transition);
+  background: var(--default-bg);
   color: var(--text-color);
   font-family: var(--font-family);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(var(--glass-blur));
+  box-shadow: var(--glass-shadow);
+  border: var(--glass-border);
+  outline: none;
 }
-.glass-btn--primary    { background: var(--primary-color); color: #fff; }
-.glass-btn--secondary  { background: var(--secondary-color); color: #222; }
-.glass-btn--success    { background: var(--success-bg); color: #222; }
-.glass-btn--danger     { background: var(--danger-bg); color: #fff; }
-.glass-btn--warning    { background: var(--warning-bg); color: #222; }
-.glass-btn--info       { background: var(--info-bg); color: #fff; }
-.glass-btn--light      { background: var(--light-bg); color: #222; }
-.glass-btn--dark       { background: var(--dark-bg); color: #fff; }
+.glass-btn:focus-visible {
+  box-shadow: var(--focus-ring), var(--glass-shadow);
+}
+
+.glass-btn--primary    { background: var(--primary-bg);   color: var(--primary-text);   }
+.glass-btn--secondary  { background: var(--secondary-bg); color: var(--secondary-text); }
+.glass-btn--success    { background: var(--success-bg);   color: var(--success-text);   }
+.glass-btn--danger     { background: var(--danger-bg);    color: var(--danger-text);    }
+.glass-btn--warning    { background: var(--warning-bg);   color: var(--warning-text);   }
+.glass-btn--info       { background: var(--info-bg);      color: var(--info-text);      }
+.glass-btn--light      { background: var(--light-bg);     color: var(--light-text);     }
+.glass-btn--dark       { background: var(--dark-bg);      color: var(--dark-text);      }
+
 .is-disabled,
 .glass-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  pointer-events: none;
 }
 </style>

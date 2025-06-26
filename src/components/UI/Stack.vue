@@ -49,13 +49,14 @@ const gapStyle = computed(() =>
 </script>
 
 <style lang="scss" scoped>
-@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/_variables.scss' as *;
 
 .stack {
   display: flex;
   min-width: 0;
   min-height: 0;
-  height: 200px;
+  height: var(--stack-height, auto); // Remove fixed height unless needed
+  gap: var(--space-md, 16px); // fallback gap
 }
 
 .direction--column {

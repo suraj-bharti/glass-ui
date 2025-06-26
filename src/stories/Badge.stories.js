@@ -13,7 +13,7 @@ A glass-style badge component for status or labeling, supporting multiple varian
 
 **Preview:**  
 Use the controls to change the badge variant and label.
-        `,
+                `,
             },
         },
     },
@@ -49,4 +49,41 @@ export const Success = Template.bind({});
 Success.args = {
     variant: 'success',
     default: 'Success',
+};
+
+// Preview all badges together
+export const AllBadges = () => ({
+    components: { Badge },
+    template: `
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <Badge variant="primary">Primary</Badge>
+      <Badge variant="secondary">Secondary</Badge>
+      <Badge variant="success">Success</Badge>
+      <Badge variant="danger">Danger</Badge>
+      <Badge variant="warning">Warning</Badge>
+      <Badge variant="info">Info</Badge>
+      <Badge variant="light">Light</Badge>
+      <Badge variant="dark">Dark</Badge>
+    </div>
+  `,
+});
+
+AllBadges.parameters = {
+    docs: {
+        source: {
+            code: `
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <Badge variant="primary">Primary</Badge>
+                <Badge variant="secondary">Secondary</Badge>
+                <Badge variant="success">Success</Badge>
+                <Badge variant="danger">Danger</Badge>
+                <Badge variant="warning">Warning</Badge>
+                <Badge variant="info">Info</Badge>
+                <Badge variant="light">Light</Badge>
+                <Badge variant="dark">Dark</Badge>
+                </div>
+            `.trim(),
+            language: 'html',
+        },
+    },
 };

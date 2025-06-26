@@ -47,6 +47,14 @@ const Template = (args) => ({
     template: `<Alert v-bind="args">{{ args.default }}</Alert>`,
 });
 
+export const Default = Template.bind({});
+Default.args = {
+    variant: 'primary',
+    default: 'This is an primary alert.',
+    dismissible: false,
+    timeout: null,
+};
+
 export const Info = Template.bind({});
 Info.args = {
     variant: 'info',
