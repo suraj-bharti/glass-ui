@@ -1,29 +1,122 @@
-# glass-ui
+# Glass UI
 
-This template should help get you started developing with Vue 3 in Vite.
+A modern Vue 3 component library featuring beautiful glassmorphism effects.  
+Quickly build elegant, responsive, and accessible UIs with ready-to-use glass components.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## ✨ Features
 
-## Customize configuration
+- **Glassmorphism Design:** All components use frosted glass backgrounds and soft shadows.
+- **Vue 3 Support:** Built with `<script setup>` and Composition API.
+- **Customizable:** Easily change variants, padding, alignment, and more via props.
+- **Light & Dark Themes:** Automatic support for both themes.
+- **Accessible:** Focus rings, ARIA attributes, and keyboard navigation.
+- **Component Library:** Panel, Stack, Button, Alert, Badge, Input, Grid, Toaster, and more.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+---
 
-## Project Setup
+## 🚀 Getting Started
 
-```sh
-npm install
+### 1. Install
+
+```bash
+npm install glass-ui
+# or
+yarn add glass-ui
 ```
 
-### Compile and Hot-Reload for Development
+### 2. Register the Plugin
 
-```sh
-npm run dev
+```js
+// main.js or main.ts
+import { createApp } from 'vue';
+import App from './App.vue';
+import GlassUI from 'glass-ui';
+import 'glass-ui/dist/style.css'; // if you publish CSS
+
+const app = createApp(App);
+app.use(GlassUI);
+app.mount('#app');
 ```
 
-### Compile and Minify for Production
+Or import components locally:
 
-```sh
-npm run build
+```js
+import { Button, Panel } from 'glass-ui';
 ```
+
+---
+
+## 🧩 Components
+
+| Component | Description |
+|-----------|-------------|
+| **Panel** | Glass container for grouping content, supports variants and padding. |
+| **Stack** | Flexible layout for stacking children vertically or horizontally. |
+| **Button** | Glassmorphic button with variants and disabled state. |
+| **Alert** | Stylish alert for messages and notifications, dismissible. |
+| **Badge** | Status or highlight badge, supports all variants. |
+| **Input** | Glass input field, supports types and custom borders. |
+| **Grid** | Responsive grid system for arranging items in columns. |
+| **Toaster** | Toast notification system with variants and auto-dismiss. |
+
+See the [Storybook](#storybook) for live demos and prop documentation.
+
+---
+
+## 📚 Documentation & Community
+
+- **Storybook:** _[Link to your Storybook deployment]_  
+  Live demos and prop documentation for every component.
+- **GitHub Repo:** [https://github.com/yourusername/glass-ui](https://github.com/yourusername/glass-ui)
+- **Issues & Contributions:**  
+  Please open issues or pull requests for bugs, features, or improvements.
+- **License:** MIT
+
+---
+
+## 🛡️ License & Attribution
+
+This project is licensed under the [MIT License](./LICENSE).
+
+> **Attribution:**  
+> Please credit [Surajdev Pandey](https://github.com/surajdevpandey) when using this library in your projects.  
+> Do not remove or alter the original attribution in source or documentation.
+
+---
+
+## 💡 Example Usage
+
+```vue
+<template>
+  <g-panel variant="primary" padding="lg">
+    <h1>Welcome to Glass UI</h1>
+    <g-alert variant="info" dismissible>
+      This is an info alert!
+    </g-alert>
+    <g-btn variant="success" @click="notify">Show Toast</g-btn>
+    <Toaster ref="toaster" />
+  </g-panel>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+import { Toaster } from 'glass-ui';
+
+const toaster = ref(null);
+function notify() {
+  toaster.value.show('Hello from Glass UI!', { variant: 'success' });
+}
+</script>
+```
+
+---
+
+## ⭐️ Star & Share
+
+If you find Glass UI useful, please ⭐️ star the repo and share it with others!
+
+---
+
+**Glass UI &copy; 2025 — Created by Surajdev
