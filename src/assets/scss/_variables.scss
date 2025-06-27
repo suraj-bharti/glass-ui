@@ -1,33 +1,22 @@
 :root {
   /* Glass backgrounds */
-  --default-bg:   rgba(255,255,255,0.18);
-  --primary-bg:   rgba(98,0,234,0.18);
-  --secondary-bg: rgba(3,218,198,0.18);
-  --success-bg:   rgba(58,231,153,0.18);
-  --warning-bg:   rgba(245,213,84,0.18);
-  --danger-bg:    rgba(236,86,86,0.18);
-  --info-bg:      rgba(23,162,184,0.18);
-  --light-bg:     rgba(255,255,255,0.38);
-  --dark-bg:      rgba(52,58,64,0.38);
+  --default-bg:   rgba(255,255,255,0.2);
+  --primary-bg:   rgba(98,0,234,0.2);
+  --secondary-bg: rgba(3,218,198,0.2);
+  --success-bg:   rgba(58,231,153,0.2);
+  --warning-bg:   rgba(245,213,84,0.2);
+  --danger-bg:    rgba(236,86,86,0.2);
+  --info-bg:      rgba(23,162,184,0.2);
+  --light-bg:     rgba(255,255,255,0.44);
+  --dark-bg:      rgba(52,58,64,0.44);
 
-  /* Text colors */
-  --primary-text:   #fff;
-  --secondary-text: #222;
-  --success-text:   #222;
-  --warning-text:   #222;
-  --danger-text:    #b00020; // or #c62828 or #222 for best contrast
-  --info-text:      #fff;
-  --light-text:     #222;
-  --dark-text:      #fff;
-
-  /* Base UI colors */
-  --background-color: #fff;
-  --text-color: #222;
+  /* Glass gradients */
+  --glass-gradient-bg: linear-gradient(135deg, rgba(255,255,255,0.32) 0%, rgba(236,86,86,0.12) 100%);
 
   /* Glassmorphism effects */
-  --glass-blur: 8px;
-  --glass-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
-  --glass-border: 1px solid rgba(255,255,255,0.18);
+  --glass-blur: 5px;
+  --glass-shadow: 0 1px 1px 0 rgba(31, 38, 135, 0.18);
+  --glass-border: 1px solid rgba(255,255,255,0.2);
 
   /* Focus ring */
   --focus-ring: 0 0 0 2px rgba(98,0,234,0.25);
@@ -36,6 +25,19 @@
   --font-family: 'Roboto', sans-serif;
   --border-radius: 12px;
   --transition: 0.2s cubic-bezier(.4,0,.2,1);
+
+  /* Text colors for variants */
+  --primary-text:   #fff;
+  --secondary-text: #222;
+  --success-text:   #222;
+  --warning-text:   #222;
+  --danger-text:    #fff;
+  --info-text:      #fff;
+  --light-text:     #222;
+  --dark-text:      #fff;
+
+  --background-color: #f8fafc;
+  --text-color: #222;
 
   /* Spacing */
   --space-xs: 4px;
@@ -66,7 +68,7 @@
   --secondary-text: #222;
   --success-text:   #222;
   --warning-text:   #222;
-  --danger-text: #ffb3b3; // a light red or pink for dark backgrounds, or keep #fff if it looks good
+  --danger-text:    #ffb3b3; // a light red or pink for dark backgrounds, or keep #fff if it looks good
   --info-text:      #fff;
   --light-text:     #222;
   --dark-text:      #fff;

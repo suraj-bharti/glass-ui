@@ -16,11 +16,11 @@ const props = defineProps({
   variant: {
     type: String,
     default: 'default',
-    validator: v => ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'].includes(v)
+    validator: v => ['default', 'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'].includes(v)
   },
   padding: {
     type: String,
-    default: '',
+    default: 'md',
     validator: v => ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', '2x', '3x', ''].includes(v),
   },
   disabled: {
