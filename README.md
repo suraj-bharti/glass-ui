@@ -24,6 +24,8 @@ Quickly build elegant, responsive, and accessible UIs with ready-to-use glass co
 npm install glass-ui
 # or
 yarn add glass-ui
+# or
+pnpm add glass-ui
 ```
 
 ### 2. Register the Plugin
@@ -81,7 +83,7 @@ See the [Storybook](#storybook) for live demos and prop documentation.
 This project is licensed under the [MIT License](./LICENSE).
 
 > **Attribution:**  
-> Please credit [Surajdev Pandey](https://github.com/surajdevpandey) when using this library in your projects.  
+> Please credit [Surajdev Pandey](https://github.com/suraj-bharti) when using this library in your projects.  
 > Do not remove or alter the original attribution in source or documentation.
 
 ---

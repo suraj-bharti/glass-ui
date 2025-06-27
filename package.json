@@ -1,8 +1,27 @@
 {
   "name": "glass-ui",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
+  "version": "1.0.0",
+  "description": "A modern Vue 3 component library featuring beautiful glassmorphism effects.",
+  "author": "Surajdev Pandey <ersuraj321@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suraj-bharti/glass-ui"
+  },
+  "homepage": "https://github.com/suraj-bharti/glass-ui#readme",
+  "bugs": {
+    "url": "https://github.com/suraj-bharti/glass-ui/issues"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "component-library",
+    "glassmorphism",
+    "glasskit",
+    "ui",
+    "glass-ui",
+    "design-system"
+  ],
   "main": "dist/glass-ui.umd.js",
   "module": "dist/glass-ui.es.js",
   "exports": {
@@ -21,7 +40,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "mitt": "^3.0.1",
@@ -37,5 +57,11 @@
     "sass": "^1.83.0",
     "storybook": "^9.0.13",
     "vite": "^6.0.5"
-  }
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "sideEffects": [
+    "*.css"
+  ]
 }
