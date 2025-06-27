@@ -35,7 +35,7 @@ pnpm add glass-ui-vue
 import { createApp } from 'vue';
 import App from './App.vue';
 import GlassUI from 'glass-ui-vue';
-import 'glass-ui-vue/dist/glass-ui.css';
+import 'glass-ui-vue/styles';
 
 const app = createApp(App);
 app.use(GlassUI);
@@ -71,7 +71,7 @@ See the [Storybook](#storybook) for live demos and prop documentation.
 
 - **Storybook:** _[Link to your Storybook deployment]_  
   Live demos and prop documentation for every component.
-- **GitHub Repo:** [https://github.com/yourusername/glass-ui](https://github.com/yourusername/glass-ui)
+- **GitHub Repo:** [https://github.com/suraj-bharti/glass-ui](https://github.com/suraj-bharti/glass-ui)
 - **Issues & Contributions:**  
   Please open issues or pull requests for bugs, features, or improvements.
 - **License:** MIT

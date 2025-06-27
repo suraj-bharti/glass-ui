@@ -23,7 +23,7 @@ export {
   Toaster
 };
 
-export default {
+const GlassUI = {
   install(app) {
     app.component('g-panel', Panel);
     app.component('g-stack', Stack);
@@ -37,3 +37,4 @@ export default {
     app.component('g-toaster', Toaster);
   },
 };
+export default GlassUI;
