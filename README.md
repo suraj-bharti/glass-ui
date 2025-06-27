@@ -21,11 +21,11 @@ Quickly build elegant, responsive, and accessible UIs with ready-to-use glass co
 ### 1. Install
 
 ```bash
-npm install glass-ui
+npm install glass-ui-vue
 # or
-yarn add glass-ui
+yarn add glass-ui-vue
 # or
-pnpm add glass-ui
+pnpm add glass-ui-vue
 ```
 
 ### 2. Register the Plugin
@@ -34,8 +34,8 @@ pnpm add glass-ui
 // main.js or main.ts
 import { createApp } from 'vue';
 import App from './App.vue';
-import GlassUI from 'glass-ui';
-import 'glass-ui/dist/style.css'; // if you publish CSS
+import GlassUI from 'glass-ui-vue';
+import 'glass-ui-vue/dist/glass-ui.css';
 
 const app = createApp(App);
 app.use(GlassUI);
@@ -45,7 +45,7 @@ app.mount('#app');
 Or import components locally:
 
 ```js
-import { Button, Panel } from 'glass-ui';
+import { Button, Panel } from 'glass-ui-vue';
 ```
 
 ---

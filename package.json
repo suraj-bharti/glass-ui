@@ -1,7 +1,7 @@
 {
-  "name": "glass-ui",
-  "version": "1.0.0",
-  "description": "A modern Vue 3 component library featuring beautiful glassmorphism effects.",
+  "name": "glass-ui-vue",
+  "version": "1.0.4",
+  "description": "A Vue 3 component library that implements glassmorphism design principles, providing a modern and visually appealing UI toolkit. It includes a variety of reusable components styled with glassmorphism effects, making it easy to create elegant and interactive user interfaces. This library is designed to be flexible and easy to integrate into Vue applications, offering a consistent design language and enhancing the overall user experience.",
   "author": "Surajdev Pandey <ersuraj321@gmail.com>",
   "license": "MIT",
   "repository": {
@@ -20,7 +20,14 @@
     "glasskit",
     "ui",
     "glass-ui",
-    "design-system"
+    "ui-kit",
+    "vue-components",
+    "vue-component-library",
+    "vue-ui",
+    "vue3-components",
+    "vue3-ui",
+    "vue3-component-library",
+    "vue3-design-system",
   ],
   "main": "dist/glass-ui.umd.js",
   "module": "dist/glass-ui.es.js",
