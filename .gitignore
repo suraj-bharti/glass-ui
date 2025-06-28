@@ -18,6 +18,9 @@ coverage
 /cypress/videos/
 /cypress/screenshots/
 
+# Storybook build output (do not commit to main branch)
+storybook-static/
+
 # Editor directories and files
 .vscode/
 .idea

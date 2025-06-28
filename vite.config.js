@@ -9,6 +9,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  base: '/glass-ui/',
   build: {
     lib: {
       entry: 'src/index.js',

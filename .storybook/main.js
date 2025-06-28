@@ -9,5 +9,10 @@ const config = {
     name: "@storybook/vue3-vite",
     options: {},
   },
+  viteFinal: (config) => {
+    config.base = '/glass-ui/';
+    config.publicDir = false;
+    return config;
+  },
 };
 export default config;

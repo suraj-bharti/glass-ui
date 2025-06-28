@@ -69,7 +69,7 @@ See the [Storybook](#storybook) for live demos and prop documentation.
 
 ## 📚 Documentation & Community
 
-- **Storybook:** _[Link to your Storybook deployment]_  
+- **Storybook:** [https://your-storybook-url](https://your-storybook-url)  
   Live demos and prop documentation for every component.
 - **GitHub Repo:** [https://github.com/suraj-bharti/glass-ui](https://github.com/suraj-bharti/glass-ui)
 - **Issues & Contributions:**  
