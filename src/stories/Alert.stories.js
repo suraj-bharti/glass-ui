@@ -20,13 +20,20 @@ Use the controls to change the alert variant, message, make it dismissible, and 
     argTypes: {
         variant: {
             control: { type: 'select' },
-            options: ['info', 'success', 'warning', 'danger', 'light', 'dark'], // Remove duplicate 'info'
+            options: ['primary', 'secondary', 'info', 'success', 'warning', 'danger', 'light', 'dark'],
             description: 'Alert style variant.',
         },
-        default: {
+        title: {
             control: { type: 'text' },
-            description: 'Alert message (slot content).',
-            table: { category: 'slots' },
+            description: 'Alert title (bold headline).',
+        },
+        description: {
+            control: { type: 'text' },
+            description: 'Alert description (secondary text).',
+        },
+        icon: {
+            control: { type: 'text' },
+            description: 'Icon (emoji or component name).',
         },
         dismissible: {
             control: { type: 'boolean' },
@@ -35,6 +42,11 @@ Use the controls to change the alert variant, message, make it dismissible, and 
         timeout: {
             control: { type: 'number' },
             description: 'Auto-dismiss after this many milliseconds (e.g., 3000 for 3s). Set to 0 or null to disable.',
+        },
+        default: {
+            control: { type: 'text' },
+            description: 'Slot content (used only if title and description are empty).',
+            table: { category: 'slots' },
         },
     },
 };
@@ -50,57 +62,76 @@ const Template = (args) => ({
 export const Default = Template.bind({});
 Default.args = {
     variant: 'primary',
-    default: 'This is an primary alert.',
+    title: 'Primary Alert',
+    description: 'This is a primary alert.',
     dismissible: false,
     timeout: null,
+    icon: '',
+    default: '',
 };
 
 export const Info = Template.bind({});
 Info.args = {
     variant: 'info',
-    default: 'This is an info alert.',
+    title: 'Info Alert',
+    description: 'This is an info alert.',
     dismissible: false,
     timeout: null,
+    icon: 'ℹ️',
+    default: '',
 };
 
 export const Success = Template.bind({});
 Success.args = {
     variant: 'success',
-    default: 'Operation successful!',
+    title: 'Success!',
+    description: 'Operation successful!',
     dismissible: true,
     timeout: null,
+    icon: '✔️',
+    default: '',
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
     variant: 'warning',
-    default: 'Warning: Please check your input.',
+    title: 'Warning',
+    description: 'Please check your input.',
     dismissible: true,
     timeout: 4000,
+    icon: '⚠️',
+    default: '',
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
     variant: 'danger',
-    default: 'Error: Something went wrong.',
+    title: 'Error',
+    description: 'Something went wrong.',
     dismissible: true,
     timeout: 3000,
+    icon: '⛔',
+    default: '',
 };
 
-// Add Light variant story if supported
 export const Light = Template.bind({});
 Light.args = {
     variant: 'light',
-    default: 'This is a light alert.',
+    title: 'Light Alert',
+    description: 'This is a light alert.',
     dismissible: false,
     timeout: null,
+    icon: '',
+    default: '',
 };
 
-// Add Dark variant story if supported
 export const Dark = Template.bind({});
 Dark.args = {
     variant: 'dark',
-    default: 'This is a dark alert.',
+    title: 'Dark Alert',
+    description: 'This is a dark alert.',
     dismissible: false,
     timeout: null,
+    icon: '',
+    default: '',
 };

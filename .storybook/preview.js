@@ -1,14 +1,18 @@
-import 'glass-ui-vue/styles'; // or the path to your main CSS
+import 'glass-ui-vue/styles';
 
-/** @type { import('@storybook/vue3-vite').Preview } */
+export const decorators = [
+  (story, context) => {
+    // Get the selected background value
+    const bg = '#f1ffcc4a';
+    return {
+      components: { story },
+      template: `<div :style="{ background: '${bg}', padding: '2rem', width: '100%' }"><story /></div>`,
+    };
+  },
+];
+
 const preview = {
   parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
-    },
     backgrounds: {
       default: 'glass',
       values: [

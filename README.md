@@ -57,7 +57,7 @@ import { Button, Panel } from 'glass-ui-vue';
 | **Panel** | Glass container for grouping content, supports variants and padding. |
 | **Stack** | Flexible layout for stacking children vertically or horizontally. |
 | **Button** | Glassmorphic button with variants and disabled state. |
-| **Alert** | Stylish alert for messages and notifications, dismissible. |
+| **Alert** | Stylish alert for messages and notifications, supports icon, title, description, and is dismissible. |
 | **Badge** | Status or highlight badge, supports all variants. |
 | **Input** | Glass input field, supports types and custom borders. |
 | **Grid** | Responsive grid system for arranging items in columns. |
@@ -94,8 +94,30 @@ This project is licensed under the [MIT License](./LICENSE).
 <template>
   <g-panel variant="primary" padding="lg">
     <h1>Welcome to Glass UI</h1>
-    <g-alert variant="info" dismissible>
-      This is an info alert!
+    <g-alert
+      variant="info"
+      dismissible
+      :icon="'ℹ️'"
+      title="Info Alert"
+      description="This is an info alert with icon, title, and description!"
+    />
+    <g-alert
+      variant="success"
+      :icon="'✔️'"
+      title="Success!"
+      description="Your operation was completed successfully."
+    />
+    <g-alert
+      variant="danger"
+      dismissible
+    >
+      <template #icon>
+        <svg width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="12" fill="#e74c3c"/>
+          <path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2"/>
+        </svg>
+      </template>
+      <strong>Danger:</strong> Custom SVG icon!
     </g-alert>
     <g-button variant="success" @click="notify">Show Toast</g-button>
     <!-- Toaster should be mounted at the root or in App.vue -->
@@ -115,6 +137,22 @@ function notify() {
 }
 </script>
 ```
+
+---
+
+## 📝 Alert Props
+
+| Prop         | Type                       | Default     | Description                                               |
+|--------------|----------------------------|-------------|-----------------------------------------------------------|
+| `variant`    | String                     | `'info'`    | Visual style: `primary`, `secondary`, `success`, etc.     |
+| `icon`       | String, Component, or Slot | `null`      | Emoji, component, or slot for leading icon                |
+| `title`      | String                     | `''`        | Bold headline text                                        |
+| `description`| String                     | `''`        | Secondary description text                                |
+| `dismissible`| Boolean                    | `false`     | Show a close (dismiss) button                             |
+| `timeout`    | Number                     | `null`      | Auto-dismiss after ms (e.g., `3000` for 3s)               |
+
+- If `title` and `description` are empty, slot content is rendered.
+- The `icon` prop accepts an emoji, a component, or you can use the `#icon` slot for custom SVG.
 
 ---
 

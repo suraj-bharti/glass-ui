@@ -17,23 +17,41 @@
 
       <h2 style="margin-top:2rem;">🧩 Component Showcase</h2>
       <g-stack direction="column" gap="lg" align="start">
+        <g-alert variant="primary" dismissible>
+          <strong>Primary:</strong> Glass UI supports all alert variants!
+        </g-alert>
+        <g-alert variant="secondary" dismissible>
+          <strong>Secondary:</strong> Glass UI supports all alert variants!
+        </g-alert>
         <g-alert variant="info" dismissible>
           <strong>Info:</strong> Glass UI supports all alert variants!
         </g-alert>
         <g-alert variant="warning" dismissible>
           <strong>Warning:</strong> Glass UI supports all alert variants!
         </g-alert>
-        <g-alert variant="success" dismissible>
-          <strong>Success:</strong> Glass UI supports all alert variants!
-        </g-alert>
+        <g-alert
+          variant="success"
+          dismissible
+          :icon="'✔️'"
+          title="Success!"
+          description="Your operation was completed successfully."
+        />
         <g-alert variant="danger" dismissible>
-          <strong>Danger:</strong> Glass UI supports all alert variants!
+          <template #icon>
+            <svg width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="12" fill="#e74c3c"/>
+              <path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2"/>
+            </svg>
+          </template>
+          <strong>Danger:</strong> Custom SVG icon!
         </g-alert>
-        <g-alert variant="light" dismissible>
-          <strong>Light:</strong> Glass UI supports all alert variants!
+        <g-alert variant="light" dismissible description="Glass UI supports all alert variants!">
         </g-alert>
         <g-alert variant="dark" dismissible>
           <strong>Dark:</strong> Glass UI supports all alert variants!
+        </g-alert>
+        <g-alert variant="info">
+          <strong>Info:</strong> This is a slot-based alert.
         </g-alert>
         <g-button @click="notify">Click me!</g-button>
         <g-badge variant="success">Success Badge</g-badge>

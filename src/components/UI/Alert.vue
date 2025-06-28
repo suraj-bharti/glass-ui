@@ -8,7 +8,21 @@
     ]"
     role="alert"
   >
-    <slot />
+    <span v-if="icon || $slots.icon" class="glass-alert__icon">
+      <slot name="icon">
+        <template v-if="typeof icon === 'string'">
+          {{ icon }}
+        </template>
+        <template v-else-if="icon">
+          <component :is="icon" />
+        </template>
+      </slot>
+    </span>
+    <div class="glass-alert__content">
+      <div v-if="title" class="glass-alert__title">{{ title }}</div>
+      <div v-if="description" class="glass-alert__description">{{ description }}</div>
+      <slot v-if="!title && !description" />
+    </div>
     <button
       v-if="dismissible"
       class="glass-alert__close"
@@ -35,6 +49,18 @@ const props = defineProps({
   timeout: {
     type: [Number, String],
     default: null, // ms, e.g. 3000
+  },
+  icon: {
+    type: [String, Object, Function],
+    default: null,
+  },
+  title: {
+    type: String,
+    default: '',
+  },
+  description: {
+    type: String,
+    default: '',
   },
 });
 
@@ -79,6 +105,35 @@ onBeforeUnmount(() => {
   backdrop-filter: blur(var(--glass-blur));
   border: var(--glass-border);
   transition: opacity var(--transition);
+  display: flex;
+  align-items: center; // <-- Change from flex-start to center
+  gap: 0.75em;
+}
+
+.glass-alert__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  margin-right: 0.5em;
+  line-height: 1;
+  height: 2em;      // Ensures vertical centering
+  min-width: 2em;   // Ensures horizontal centering if icon is smaller
+}
+
+.glass-alert__content {
+  display: block;
+}
+
+.glass-alert__title {
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 0.1em;
+}
+
+.glass-alert__description {
+  font-size: 0.98em;
+  opacity: 0.95;
 }
 
 .glass-alert--dismissible {
