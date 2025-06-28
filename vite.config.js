@@ -28,11 +28,6 @@ export default defineConfig({
           const name = assetInfo?.name || assetInfo?.filename || '';
           if (name === 'style.css' || name === 'glass-ui-vue.css') return 'glass-ui.css';
           return name;
-        },
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            return 'vendor';
-          }
         }
       }
     }
