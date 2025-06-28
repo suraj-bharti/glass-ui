@@ -97,21 +97,91 @@ This project is licensed under the [MIT License](./LICENSE).
     <g-alert variant="info" dismissible>
       This is an info alert!
     </g-alert>
-    <g-btn variant="success" @click="notify">Show Toast</g-btn>
-    <Toaster ref="toaster" />
+    <g-button variant="success" @click="notify">Show Toast</g-button>
+    <!-- Toaster should be mounted at the root or in App.vue -->
+    <Toaster />
   </g-panel>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { Toaster } from 'glass-ui';
+import { toast } from 'glass-ui-vue';
 
-const toaster = ref(null);
 function notify() {
-  toaster.value.show('Hello from Glass UI!', { variant: 'success' });
+  toast.emit('show', {
+    message: 'Hello from Glass UI!',
+    variant: 'success',
+    duration: 3000
+  });
 }
 </script>
 ```
+
+---
+
+## 🛎️ Using the Toaster: Two Approaches
+
+Glass UI provides two ways to trigger toast notifications.  
+Choose the one that best fits your use case:
+
+### 1. Global Event Emitter (`toast.emit`)
+
+**How:**  
+Import the `toast` event bus and emit notifications from anywhere in your app.
+
+```js
+import { toast } from 'glass-ui-vue';
+
+function notify() {
+  toast.emit('show', {
+    message: 'Hello from Glass UI!',
+    variant: 'success',
+    duration: 3000
+  });
+}
+```
+
+**When to use:**  
+- You want to trigger toasts from any component, even deeply nested ones.
+- You want a decoupled, global notification system.
+- You don’t want to pass refs or props around.
+
+**Note:**  
+Mount `<Toaster />` once at the root (e.g., in `App.vue`).
+ 
+---
+
+### 2. Local Ref Method
+
+**How:**  
+Use a `ref` to the `<Toaster />` component and call its `show` method directly.
+
+```vue
+<template>
+  <Toaster ref="toaster" />
+  <g-button @click="notify">Show Toast</g-button>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+import { Toaster } from 'glass-ui-vue';
+
+const toaster = ref(null);
+
+function notify() {
+  toaster.value.show('Hello from Glass UI!', { variant: 'success', duration: 3000 });
+}
+</script>
+```
+
+**When to use:**  
+- You only need to show toasts from within a specific component or local area.
+- You want more direct control or to avoid global state.
+- You don’t want to rely on an event bus.
+
+---
+
+**Tip:**  
+You can use both methods in the same app if needed!
 
 ---
 

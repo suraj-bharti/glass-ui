@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, defineExpose } from 'vue';
 import toaster from '@/plugins/toaster';
 
 const toasts = ref([]);
@@ -49,6 +49,9 @@ toaster.on('show', (payload = {}) => {
   // payload: { message, variant, duration }
   show(payload.message, payload);
 });
+
+// Expose the show method for ref usage
+defineExpose({ show });
 </script>
 
 <style lang="scss" scoped>

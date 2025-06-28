@@ -9,6 +9,7 @@ import Input from './components/UI/Input.vue';
 import Textarea from './components/UI/Textarea.vue';
 import Grid from './components/UI/Grid.vue';
 import Toaster from './components/UI/Toaster.vue';
+import toast from './plugins/toaster';
 
 export {
   Panel,
@@ -20,7 +21,8 @@ export {
   Input,
   Textarea,
   Grid,
-  Toaster
+  Toaster,
+  toast
 };
 
 const GlassUI = {
