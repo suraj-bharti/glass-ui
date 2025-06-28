@@ -49,9 +49,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "prepublishOnly": "npm run build",
-    "deploy-storybook": "gh-pages -d storybook-static"
+    "storybook:build": "storybook build",
+    "storybook:publish": "npm run storybook:build && touch ./storybook-static/.nojekyll && gh-pages -d storybook-static"
   },
   "dependencies": {
     "glass-ui-vue": "^1.2.6",
