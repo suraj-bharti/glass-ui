@@ -69,8 +69,10 @@ See the [Storybook](#storybook) for live demos and prop documentation.
 
 ## 📚 Documentation & Community
 
-- **Storybook:** [https://suraj-bharti.github.io/glass-ui](https://suraj-bharti.github.io/glass-ui)  
+- **Storybook:** [https://suraj-bharti.github.io/glass-ui/](https://suraj-bharti.github.io/glass-ui/)  
   Live demos and prop documentation for every component.
+- **Demo App:** [https://suraj-bharti.github.io/glass-ui/demo/](https://suraj-bharti.github.io/glass-ui/demo/)  
+  Try out Glass UI components interactively.
 - **GitHub Repo:** [https://github.com/suraj-bharti/glass-ui](https://github.com/suraj-bharti/glass-ui)
 - **Issues & Contributions:**  
   Please open issues or pull requests for bugs, features, or improvements.
@@ -229,4 +231,4 @@ If you find Glass UI useful, please ⭐️ star the repo and share it with other
 
 ---
 
-**Glass UI &copy; 2025 — Created by Surajdev
+**Glass UI &copy; 2025 — Created by Surajdev Pandey**

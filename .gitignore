@@ -20,6 +20,7 @@ coverage
 
 # Storybook build output (do not commit to main branch)
 storybook-static/
+demo/
 
 # Editor directories and files
 .vscode/
