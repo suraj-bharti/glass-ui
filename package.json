@@ -51,7 +51,8 @@
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
     "demo:build": "vite build --config demo/vite.config.js",
-    "pages:publish": "npm run storybook:build && npm run demo:build && rm -rf gh-pages-temp && mkdir gh-pages-temp && cp -r storybook-static/* gh-pages-temp/ && mkdir -p gh-pages-temp/demo && cp -r demo/dist/* gh-pages-temp/demo/ && gh-pages -d gh-pages-temp && rm -rf gh-pages-temp"
+    "pages:publish": "npm run storybook:build && npm run demo:build && rm -rf gh-pages-temp && mkdir gh-pages-temp && cp -r storybook-static/* gh-pages-temp/ && mkdir -p gh-pages-temp/demo && cp -r demo/dist/* gh-pages-temp/demo/ && gh-pages -d gh-pages-temp && rm -rf gh-pages-temp",
+    "npm:publish": "npm publish --access public"
   },
   "dependencies": {
     "glass-ui-vue": "^1.2.6",

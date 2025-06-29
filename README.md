@@ -225,10 +225,24 @@ You can use both methods in the same app if needed!
 
 ---
 
+## 🤝 Contributing
+
+We welcome contributors to help build a top-class UI component library!  
+Whether you want to fix bugs, add features, improve documentation, or suggest ideas—your input is valued.
+
+- Please open issues or pull requests on [GitHub](https://github.com/suraj-bharti/glass-ui).
+- See the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines and tips.
+
+Let's build an amazing glassmorphism UI kit
+
+---
+
 ## ⭐️ Star & Share
 
 If you find Glass UI useful, please ⭐️ star the repo and share it with others!
 
 ---
+
+[![Contributors](https://img.shields.io/github/contributors/suraj-bharti/glass-ui.svg)](https://github.com/suraj-bharti/glass-ui/graphs/contributors)
 
 **Glass UI &copy; 2025 — Created by Surajdev Pandey**
