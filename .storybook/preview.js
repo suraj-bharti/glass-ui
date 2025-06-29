@@ -6,7 +6,7 @@ export const decorators = [
     const bg = '#f1ffcc4a';
     return {
       components: { story },
-      template: `<div :style="{ background: '${bg}', padding: '2rem', width: '100%' }"><story /></div>`,
+      template: `<div :style="{ background: '${bg}', width: '100%' }"><story /></div>`,
     };
   },
 ];

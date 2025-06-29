@@ -3,6 +3,7 @@ import Grid from '../components/UI/Grid.vue';
 export default {
     title: 'Components/Grid',
     component: Grid,
+    tags: ['autodocs'],
     argTypes: {
         cols: {
             control: { type: 'number', min: 1, max: 12 },
@@ -19,20 +20,37 @@ export default {
             control: { type: 'select' },
             options: ['', 'start', 'center', 'end', 'stretch'],
             defaultValue: '',
-            description: 'Vertical alignment',
+            description: 'Vertical alignment (align-items)',
         },
         justify: {
             control: { type: 'select' },
             options: ['', 'start', 'center', 'end', 'between', 'around', 'evenly'],
             defaultValue: '',
-            description: 'Horizontal alignment',
+            description: 'Horizontal alignment (justify-items/justify-content)',
         },
         wrap: {
             control: { type: 'boolean' },
             defaultValue: false,
-            description: 'Enable wrapping',
+            description: 'Enable wrapping (for flex layouts only, ignored for grid)',
         },
     },
+    parameters: {
+        docs: {
+            description: {
+                component: `
+**Grid Component Preview**
+
+- \`cols\`: Number of columns (1-12)
+- \`gap\`: Gap between grid items (\`xs\`, \`sm\`, \`md\`, \`lg\`, \`xl\`)
+- \`align\`: Vertical alignment (\`start\`, \`center\`, \`end\`, \`stretch\`)
+- \`justify\`: Horizontal alignment (\`start\`, \`center\`, \`end\`, \`between\`, \`around\`, \`evenly\`)
+- \`wrap\`: Enable wrapping (for flex layouts only, ignored for grid)
+
+Try different options using the controls below to see how the grid responds.
+        `
+            }
+        }
+    }
 };
 
 const Template = (args) => ({
@@ -41,7 +59,7 @@ const Template = (args) => ({
         return { args };
     },
     template: `
-    <Grid v-bind="args" style="background: var(--default-bg); padding: 1em;">
+    <Grid v-bind="args" style="background: var(--default-bg); padding: 1em; height: 200px">
       <div style="background: var(--primary-bg); color: var(--primary-text); padding: 1em; border-radius: 8px;">Item 1</div>
       <div style="background: var(--success-bg); color: var(--success-text); padding: 1em; border-radius: 8px;">Item 2</div>
       <div style="background: var(--danger-bg); color: var(--danger-text); padding: 1em; border-radius: 8px;">Item 3</div>

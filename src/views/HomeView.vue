@@ -56,7 +56,7 @@
         <g-button @click="notify">Click me!</g-button>
         <g-badge variant="success">Success Badge</g-badge>
         <g-input placeholder="Type something..." />
-        <g-grid :cols="3" gap="md" style="margin-top: 1rem;">
+        <g-grid :cols="3" gap="md" justify="between" style="max-width: 600px; margin: 2em auto; border: 1px dashed #ccc;">
           <g-panel variant="secondary" padding="sm">Grid Item 1</g-panel>
           <g-panel variant="success" padding="sm">Grid Item 2</g-panel>
           <g-panel variant="danger" padding="sm">Grid Item 3</g-panel>

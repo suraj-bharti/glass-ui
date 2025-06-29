@@ -115,7 +115,6 @@ onBeforeUnmount(() => {
   align-items: center;
   justify-content: center;
   font-size: 1.5em;
-  margin-right: 0.5em;
   line-height: 1;
   height: 2em;      // Ensures vertical centering
   min-width: 2em;   // Ensures horizontal centering if icon is smaller
@@ -156,7 +155,7 @@ onBeforeUnmount(() => {
   background: none;
   border: none;
   color: inherit;
-  font-size: 1.5em;
+  font-size: 2em;
   cursor: pointer;
   line-height: 1;
   padding: 0;
@@ -166,6 +165,5 @@ onBeforeUnmount(() => {
 }
 .glass-alert__close:hover {
   opacity: 1;
-  background: var(--light-bg, rgba(255,255,255,0.38));
 }
 </style>

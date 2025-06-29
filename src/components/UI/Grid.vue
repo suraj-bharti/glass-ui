@@ -4,10 +4,22 @@
       'glass-grid',
       `grid-cols-${cols}`,
       gap ? `grid-gap-${gap}` : '',
-      align ? `grid-align-${align}` : '',
-      justify ? `grid-justify-${justify}` : '',
       wrap ? 'grid-wrap' : '',
     ]"
+    :style="{
+      alignItems: align || undefined,
+      justifyItems: justify && ['start','center','end','stretch'].includes(justify) ? justify : undefined,
+      justifyContent: justify && ['between','around','evenly'].includes(justify)
+        ? (
+            justify === 'between' ? 'space-between' :
+            justify === 'around' ? 'space-around' :
+            justify === 'evenly' ? 'space-evenly' : undefined
+          )
+        : undefined,
+      // Add a maxWidth for demo/dev so justify-content is visible
+      maxWidth: (justify && ['between','around','evenly'].includes(justify)) ? '600px' : undefined,
+      margin: (justify && ['between','around','evenly'].includes(justify)) ? '2em auto' : undefined
+    }"
   >
     <slot />
   </div>
@@ -48,7 +60,7 @@ const props = defineProps({
   display: grid;
   grid-template-columns: repeat(var(--grid-cols, 2), 1fr);
   gap: var(--space-md, 16px);
-  width: 100%;
+  /* Do NOT set width: 100% here, so justify-content can work! */
 }
 
 .grid-wrap {
@@ -56,9 +68,8 @@ const props = defineProps({
 }
 
 @for $i from 1 through 12 {
-  .grid-cols-#{$i} > * {
-    flex: 0 0 calc(100% / #{$i});
-    max-width: calc(100% / #{$i});
+  .grid-cols-#{$i} {
+    --grid-cols: #{$i};
   }
 }
 
@@ -67,29 +78,4 @@ const props = defineProps({
     gap: #{$size};
   }
 }
-
-.grid-align-start    { align-items: flex-start; }
-.grid-align-center   { align-items: center; }
-.grid-align-end      { align-items: flex-end; }
-.grid-align-stretch  { align-items: stretch; }
-
-.grid-justify-start    { justify-content: flex-start; }
-.grid-justify-center   { justify-content: center; }
-.grid-justify-end      { justify-content: flex-end; }
-.grid-justify-between  { justify-content: space-between; }
-.grid-justify-around   { justify-content: space-around; }
-.grid-justify-evenly   { justify-content: space-evenly; }
-
-.grid-cols-1  { --grid-cols: 1; }
-.grid-cols-2  { --grid-cols: 2; }
-.grid-cols-3  { --grid-cols: 3; }
-.grid-cols-4  { --grid-cols: 4; }
-.grid-cols-5  { --grid-cols: 5; }
-.grid-cols-6  { --grid-cols: 6; }
-.grid-cols-7  { --grid-cols: 7; }
-.grid-cols-8  { --grid-cols: 8; }
-.grid-cols-9  { --grid-cols: 9; }
-.grid-cols-10 { --grid-cols: 10; }
-.grid-cols-11 { --grid-cols: 11; }
-.grid-cols-12 { --grid-cols: 12; }
 </style>
