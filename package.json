@@ -1,6 +1,6 @@
 {
   "name": "glass-ui-vue",
-  "version": "1.2.10",
+  "version": "1.2.12",
   "description": "A Vue 3 component library that implements glassmorphism design principles, providing a modern and visually appealing UI toolkit. It includes a variety of reusable components styled with glassmorphism effects, making it easy to create elegant and interactive user interfaces. This library is designed to be flexible and easy to integrate into Vue applications, offering a consistent design language and enhancing the overall user experience.",
   "author": "Surajdev Pandey <ersuraj321@gmail.com>",
   "license": "MIT",
@@ -62,13 +62,13 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.1",
-    "@storybook/addon-docs": "^9.0.13",
-    "@storybook/addon-onboarding": "^9.0.13",
-    "@storybook/vue3-vite": "^9.0.13",
+    "@storybook/addon-docs": "^9.0.16",
+    "@storybook/addon-onboarding": "^9.0.16",
+    "@storybook/vue3-vite": "^9.0.16",
     "@vitejs/plugin-vue": "^5.2.1",
     "gh-pages": "^6.3.0",
     "sass": "^1.83.0",
-    "storybook": "^9.0.13",
+    "storybook": "^9.0.16",
     "vite": "^6.0.5"
   },
   "peerDependencies": {
