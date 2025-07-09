@@ -9,10 +9,10 @@ export default {
     docs: {
       description: {
         component: `
-A customizable glass-style button component supporting multiple variants, disabled state, and different button types.
+A customizable glass-style button component supporting multiple variants, loading state, icon, block/full-width, autofocus, disabled state, and different button types.
 
 **Preview:**  
-Use the controls below to change the button's variant, type, disabled state, and label. The preview updates in real time to show how the button will look and behave with your selected options.
+Use the controls below to change the button's variant, type, loading, icon, block, autofocus, disabled state, and label. The preview updates in real time to show how the button will look and behave with your selected options.
         `,
       },
     },
@@ -26,6 +26,23 @@ Use the controls below to change the button's variant, type, disabled state, and
     disabled: {
       control: { type: 'boolean' },
       description: 'Disables the button.',
+    },
+    loading: {
+      control: { type: 'boolean' },
+      description: 'Shows a loading spinner and disables the button.',
+    },
+    icon: {
+      control: { type: 'text' },
+      description: 'Name of icon component (must be globally registered or imported in preview).',
+      table: { category: 'props' },
+    },
+    block: {
+      control: { type: 'boolean' },
+      description: 'Makes the button take the full width of its container.',
+    },
+    autofocus: {
+      control: { type: 'boolean' },
+      description: 'Autofocus the button on mount.',
     },
     type: {
       control: { type: 'select' },
@@ -44,6 +61,7 @@ Use the controls below to change the button's variant, type, disabled state, and
 const Template = (args) => ({
   components: { Button },
   setup() {
+    // If icon is an emoji, pass as string; if you want to support components, add logic here.
     return { args };
   },
   template: `<Button v-bind="args">{{ args.default }}</Button>`,
@@ -53,22 +71,45 @@ export const Primary = Template.bind({});
 Primary.args = {
   variant: 'primary',
   disabled: false,
+  loading: false,
+  icon: '',
+  block: false,
+  autofocus: false,
   type: 'button',
   default: 'Primary',
 };
 
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  variant: 'primary',
+  icon: '✔️', // Emoji icon
+  default: 'With Icon',
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  ...Primary.args,
+  loading: true,
+  default: 'Loading...',
+};
+
+export const Block = Template.bind({});
+Block.args = {
+  ...Primary.args,
+  block: true,
+  default: 'Block Button',
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
-  variant: 'primary',
+  ...Primary.args,
   disabled: true,
-  type: 'button',
   default: 'Disabled',
 };
 
 export const Success = Template.bind({});
 Success.args = {
+  ...Primary.args,
   variant: 'success',
-  disabled: false,
-  type: 'button',
   default: 'Success',
 };

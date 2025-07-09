@@ -1,14 +1,15 @@
 import 'glass-ui-vue/styles';
+import Toaster from '../src/components/UI/Toaster.vue';
 
 export const decorators = [
-  (story, context) => {
-    // Get the selected background value
-    const bg = '#f1ffcc4a';
-    return {
-      components: { story },
-      template: `<div :style="{ background: '${bg}', width: '100%' }"><story /></div>`,
-    };
-  },
+  (story, context) => ({
+    components: { story, Toaster },
+    setup(_, { attrs }) {
+      // Register Toaster globally if needed here
+      return { attrs };
+    },
+    template: '<story v-bind="attrs" /><Toaster />',
+  }),
 ];
 
 const preview = {
