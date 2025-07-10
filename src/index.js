@@ -9,6 +9,7 @@ import Input from './components/UI/Input.vue';
 import Textarea from './components/UI/Textarea.vue';
 import Grid from './components/UI/Grid.vue';
 import Toaster from './components/UI/Toaster.vue';
+import Card from './components/UI/Card.vue';
 import toast from './plugins/toaster';
 
 export {
@@ -21,6 +22,7 @@ export {
   Input,
   Textarea,
   Grid,
+  Card,
   Toaster,
   toast
 };
@@ -36,6 +38,7 @@ const GlassUI = {
     app.component('g-input', Input);
     app.component('g-textarea', Textarea);
     app.component('g-grid', Grid);
+    app.component('g-card', Card);
     app.component('g-toaster', Toaster);
   },
 };
