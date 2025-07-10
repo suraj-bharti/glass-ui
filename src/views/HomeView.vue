@@ -1,6 +1,14 @@
 <template>
   <main>
     <g-panel padding="xl" style="max-width: 700px; margin: 2rem auto;">
+      <Nav
+        :items="navItems"
+        aria-label="Main Navigation"
+        :fill="true"
+        justify="between"
+        @select="onNavSelect"
+        style="margin-bottom:2rem;"
+      />
       <h1>Welcome to Glass UI</h1>
       <p>
         <strong>Glass UI</strong> is a modern Vue 3 component library featuring beautiful glassmorphism effects.<br>
@@ -91,8 +99,23 @@
 </template>
 
 <script setup>
-
 import toast from '@/plugins/toaster';
+import Nav from '@/components/UI/Nav.vue';
+
+const navItems = [
+  { label: 'Home', key: 'home', active: true },
+  { label: 'Docs', key: 'docs' },
+  { label: 'GitHub', key: 'github', icon: '🚀', disabled: false }
+];
+
+function onNavSelect({ item }) {
+  if (item.key === 'github') {
+    window.open('https://github.com/suraj-bharti/glass-ui', '_blank');
+  } else if (item.key === 'docs') {
+    toast.emit('show', { message: 'Docs coming soon!', variant: 'info', duration: 2000 });
+  }
+  // Add navigation logic as needed
+}
 
 function notify() {
   toast.emit('show', {message: 'Warning notification from anywhere!', variant: 'warning', duration: 1000 });
@@ -101,7 +124,6 @@ function notify() {
   toast.emit('show', {message: 'Info notification from anywhere!', variant: 'info', duration: 5000 });
   toast.emit('show', {message: 'Danger notification from anywhere!', variant: 'danger', duration: 5000 });
 }
-
 </script>
 
 <style>

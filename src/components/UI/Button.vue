@@ -13,7 +13,14 @@
   >
     <span v-if="loading" class="glass-btn__spinner" aria-hidden="true"></span>
     <span v-if="icon && !loading" class="glass-btn__icon">
-      {{ icon }}
+      <slot name="icon">
+        <template v-if="typeof icon === 'string'">
+            {{ icon }}
+          </template>
+          <template v-else-if="icon">
+            <component :is="icon" />
+          </template>
+        </slot>
     </span>
     <span v-if="$slots.default" class="glass-btn__content">
       <slot />
