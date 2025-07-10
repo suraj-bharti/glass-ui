@@ -135,3 +135,79 @@ function onNavClick(item, idx) {
   display: inline-block;
 }
 </style>
+
+<script>
+import Nav from '../components/UI/Nav.vue';
+
+export default {
+  title: 'Components/Nav',
+  component: Nav,
+  argTypes: {
+    items: {
+      control: { type: 'object' },
+      description: 'Navigation items array',
+    },
+    ariaLabel: {
+      control: { type: 'text' },
+      defaultValue: 'Main Navigation',
+      description: 'ARIA label for navigation',
+    },
+    fill: {
+      control: { type: 'boolean' },
+      defaultValue: false,
+      description: 'Whether nav items fill the width',
+    },
+    justify: {
+      control: { type: 'select' },
+      options: ['', 'start', 'center', 'end', 'between', 'around', 'evenly'],
+      defaultValue: '',
+      description: 'Justify nav items',
+    },
+  },
+};
+
+const Template = (args) => ({
+  components: { Nav },
+  setup() {
+    function onSelect({ item }) {
+      alert(`Selected: ${item.label}`);
+    }
+    return { args, onSelect };
+  },
+  template: `
+    <div style="background: #f4f7fa; padding: 2em;">
+      <Nav v-bind="args" @select="onSelect" />
+    </div>
+  `,
+});
+
+export const Default = Template.bind({});
+Default.args = {
+  items: [
+    { label: 'Home', key: 'home', active: true },
+    { label: 'Docs', key: 'docs' },
+    { label: 'GitHub', key: 'github', icon: '🚀', disabled: false }
+  ],
+  ariaLabel: 'Main Navigation',
+  fill: false,
+  justify: '',
+};
+
+export const FillAndJustify = Template.bind({});
+FillAndJustify.args = {
+  ...Default.args,
+  fill: true,
+  justify: 'between',
+};
+
+export const WithIcons = Template.bind({});
+WithIcons.args = {
+  items: [
+    { label: 'Home', key: 'home', icon: '🏠', active: true },
+    { label: 'Docs', key: 'docs', icon: '📚' },
+    { label: 'GitHub', key: 'github', icon: '🚀', disabled: false }
+  ],
+  fill: true,
+  justify: 'center',
+};
+</script>
