@@ -22,6 +22,17 @@ const preview = {
         { name: 'white', value: '#ffffff' }
       ],
     },
+    docs: {
+      // Disable docs sidebar (if that's the source of the submenu)
+      sidebar: {
+        showRoots: true,
+      },
+    },
+    options: {
+      storySort: {
+        order: ['Welcome', 'Getting Started', '*'],
+      },
+    },
   },
 };
 

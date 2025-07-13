@@ -1,0 +1,78 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Getting Started" />
+
+# 🚀 Getting Started with Glass UI
+
+Welcome to **Glass UI**, the Vue 3 component library that brings the magic of glassmorphism to your projects!  
+Whether you’re building a dashboard, a landing page, or a full-featured web app, Glass UI helps you create interfaces that are modern, elegant, and a delight to use.
+
+---
+
+## ✨ What is Glass UI?
+
+Glass UI is a thoughtfully designed set of Vue 3 components inspired by the glassmorphism trend—think frosted glass, soft shadows, and vibrant gradients.  
+It’s more than just a collection of pretty elements: it’s a toolkit for building beautiful, accessible, and highly interactive user interfaces with minimal effort.
+
+**Why choose Glass UI?**
+
+- **Modern Aesthetics:** Every component is crafted with glassmorphism in mind, blending frosted backgrounds, soft shadows, and vibrant accents.
+- **Vue 3 & Composition API:** Built from the ground up for Vue 3, leveraging the latest best practices and performance optimizations.
+- **Customizable & Themed:** Easily switch between light and dark modes, or override SCSS variables to match your brand.
+- **Accessible by Default:** ARIA attributes, keyboard navigation, and color contrast are all considered, so your apps are usable by everyone.
+- **Developer Friendly:** Comprehensive documentation, Storybook previews, and TypeScript support make integration a breeze.
+
+---
+
+## 📦 Installation
+
+Getting started is quick and easy.  
+You can install Glass UI using npm or yarn:
+
+```bash
+npm install glass-ui-vue
+# or
+yarn add glass-ui-vue
+```
+This will add Glass UI and its dependencies to your project.
+
+---
+
+## 🔌 Usage
+
+**Register the library in your `main.js`:**
+
+```js
+import { createApp } from 'vue';
+import App from './App.vue';
+import GlassUI from 'glass-ui-vue';
+import 'glass-ui-vue/styles';
+
+const app = createApp(App);
+app.use(GlassUI);
+app.mount('#app');
+```
+
+**Now you can use Glass UI components in your templates!**
+
+---
+
+## 🎨 Theming & Customization
+
+- All components support **light and dark themes** out of the box.
+- Customize appearance using `variant`, `padding`, `align`, and other props.
+- Override SCSS variables for advanced theming.
+
+---
+
+## 📚 Documentation & Community
+
+- See the **Storybook** sidebar for live demos and prop documentation.
+- Visit the [**GitHub repo**](https://github.com/suraj-bharti/glass-ui) for source code, issues, and contributions.
+- ⭐ Star the project if you find it useful!
+
+---
+
+<small style={{ opacity: 0.7 }}>
+  Glass UI &copy; 2025 — Created by Surajdev Pandey. MIT Licensed.
+</small>
