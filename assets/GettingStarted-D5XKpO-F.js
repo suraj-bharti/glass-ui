@@ -1,4 +1,4 @@
-import{j as e,M as t}from"./blocks-pNwdqlY_.js";import{useMDXComponents as r}from"./index-AdOj33K-.js";import"./iframe-CF2apmja.js";function i(s){const n={a:"a",br:"br",code:"code",h1:"h1",h2:"h2",hr:"hr",li:"li",p:"p",pre:"pre",strong:"strong",ul:"ul",...r(),...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(t,{title:"Getting Started"}),`
+import{j as e,M as t}from"./blocks-C4dGEg2O.js";import{useMDXComponents as r}from"./index-Boofe77U.js";import"./iframe-5hD3Dlzr.js";function i(s){const n={a:"a",br:"br",code:"code",h1:"h1",h2:"h2",hr:"hr",li:"li",p:"p",pre:"pre",strong:"strong",ul:"ul",...r(),...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(t,{title:"Getting Started"}),`
 `,e.jsx(n.h1,{id:"-getting-started-with-glass-ui",children:"🚀 Getting Started with Glass UI"}),`
 `,e.jsxs(n.p,{children:["Welcome to ",e.jsx(n.strong,{children:"Glass UI"}),", the Vue 3 component library that brings the magic of glassmorphism to your projects!",e.jsx(n.br,{}),`
 `,"Whether you’re building a dashboard, a landing page, or a full-featured web app, Glass UI helps you create interfaces that are modern, elegant, and a delight to use."]}),`

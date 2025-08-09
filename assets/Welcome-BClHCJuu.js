@@ -1,4 +1,4 @@
-import{j as s,M as t}from"./blocks-pNwdqlY_.js";import{useMDXComponents as r}from"./index-AdOj33K-.js";import"./iframe-CF2apmja.js";function i(e){const n={a:"a",br:"br",code:"code",h1:"h1",h2:"h2",hr:"hr",li:"li",ol:"ol",p:"p",strong:"strong",ul:"ul",...r(),...e.components};return s.jsxs(s.Fragment,{children:[s.jsx(t,{title:"Welcome"}),`
+import{j as s,M as t}from"./blocks-C4dGEg2O.js";import{useMDXComponents as r}from"./index-Boofe77U.js";import"./iframe-5hD3Dlzr.js";function i(e){const n={a:"a",br:"br",code:"code",h1:"h1",h2:"h2",hr:"hr",li:"li",ol:"ol",p:"p",strong:"strong",ul:"ul",...r(),...e.components};return s.jsxs(s.Fragment,{children:[s.jsx(t,{title:"Welcome"}),`
 `,s.jsx(n.h1,{id:"-welcome-to-glass-ui",children:"👋 Welcome to Glass UI"}),`
 `,s.jsxs(n.p,{children:["Welcome to ",s.jsx(n.strong,{children:"Glass UI"}),", your next-generation Vue 3 component library inspired by the elegance of glassmorphism!",s.jsx(n.br,{}),`
 `,"This Storybook is your interactive playground and documentation hub, designed to help you build beautiful, modern, and accessible user interfaces with ease."]}),`
